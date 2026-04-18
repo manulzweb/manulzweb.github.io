@@ -91,9 +91,6 @@
 
 /* --- RESPONSIVE (MOBILE) --- */
 @media (max-width: 720px) {
-    .navbar {
-        background: linear-gradient(180deg, var(--accent-600) 0%, var(--accent-900) 100%);
-    }
 
     /* Mostramos el botón hamburguesa */
     .nav-toggle-btn {
@@ -103,6 +100,12 @@
     }
 
     .navbar {
+        flex-wrap: wrap;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+        gap: 1rem 3rem;
+        max-width: 242px;
         background: rgba(110, 0, 255, 0.23);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
@@ -113,69 +116,25 @@
             inset 0 1px 0 rgba(255, 255, 255, 0.3),
             inset 0 -1px 0 rgba(110, 0, 255, 0.1),
             inset 0 0 30px 15px rgba(180, 100, 255, 0.15);
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-        gap: 3rem;
+        transition: all 0.4s ease;
     }
 
     .navbar__items {
-        display: flex;
-        z-index: 10;
-
+        display: none;
         flex-direction: column;
-        position: absolute;
-
-        top: 5rem;
-        right: 0rem;
-        width: fit-content;
         gap: 0.5rem;
         padding: 1rem;
 
+        max-height: 0;
         opacity: 0;
         pointer-events: none;
-        transform: scale(0.95);
+        transform: scale(0.95) translateY(-10px);
         transition: all 0.25s ease-in;
 
         /* Efecto Glass Purple aplicado */
-        background: rgba(110, 0, 255, 0.23);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 20px;
-        border: 1px solid rgba(200, 150, 255, 0.3);
-        box-shadow:
-            0 8px 32px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3),
-            inset 0 -1px 0 rgba(110, 0, 255, 0.1),
-            inset 0 0 30px 15px rgba(180, 100, 255, 0.15);
-        position: absolute;
-        overflow: hidden;
     }
-
-    .navbar__items::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(200, 150, 255, 0.8),
-                transparent);
-    }
-
-    .navbar__items::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1px;
-        height: 100%;
-        background: linear-gradient(180deg,
-                rgba(200, 150, 255, 0.8),
-                transparent,
-                rgba(110, 0, 255, 0.3));
+    .nav-toggle-check:checked ~ .navbar__items {
+        display: flex;
     }
 
     .nav-toggle-check {
@@ -183,12 +142,14 @@
     }
 
     /* Busca si nav toggle está checked y en dado caso muestra la Card */
-    .nav-toggle-check:checked~.navbar__items {
-        pointer-events: auto;
+    .nav-toggle-check:checked ~ .navbar .navbar__items {
+        max-height: 500px; /* Un valor lo suficientemente alto */
         opacity: 1;
-        transform: scale(1);
-        z-index: 100;
-    }
+        padding: 1.5rem; /* El padding aparece al desplegar */
+        pointer-events: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria sutil */
+        margin-top: 0.5rem;
+}
 
     /* Animación de la hamburguesa a "X" */
     .nav-toggle-check:checked+.nav-toggle-btn span:nth-child(1) {

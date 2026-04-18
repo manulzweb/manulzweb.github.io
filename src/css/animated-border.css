@@ -4,7 +4,7 @@
     inherits: false;
 }
 
-.animated-border-5 {
+.animated-border-2, .animated-border-5 {
     z-index: 0;
     position: relative;
 }
@@ -25,39 +25,6 @@
     animation: spinningborder 4s linear infinite;
 }
 
-.animated-border-5::after {
-    --mask: linear-gradient(#000000 0 0);
-    -webkit-mask: var(--mask) content-box, var(--mask);
-    mask: var(--mask) content-box, var(--mask);
-
-    /* Restamos el centro para que solo quede el borde visible */
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-}
-
-.animated-border-5::before {
-    filter: blur(1rem);
-}
-
-@keyframes spinningborder {
-    from {
-        --angulo: 0deg;
-    }
-
-    to {
-        --angulo: 360deg;
-    }
-}
-
-
-@media (max-width: 425px) {
-    
-
-.animated-border-2 {
-    z-index: 0;
-    position: relative;
-}
-
 .animated-border-2::after,
 .animated-border-2::before {
     z-index: -1;
@@ -74,7 +41,7 @@
     animation: spinningborder 4s linear infinite;
 }
 
-.animated-border-2::after {
+.animated-border-2, .animated-border-5::after {
     --mask: linear-gradient(#000000 0 0);
     -webkit-mask: var(--mask) content-box, var(--mask);
     mask: var(--mask) content-box, var(--mask);
@@ -84,8 +51,21 @@
     mask-composite: exclude;
 }
 
-.animated-border-2::before {
+.animated-border-2, .animated-border-5::after {
     filter: blur(1rem);
 }
-/* a */
+
+@keyframes spinningborder {
+    from {
+        --angulo: 0deg;
+    }
+
+    to {
+        --angulo: 360deg;
+    }
+}
+
+
+@media (max-width: 425px) {
+
 }
