@@ -32,7 +32,7 @@ Para demostrar diferentes enfoques de desarrollo, el proyecto utiliza dos métod
 ### 4. Notificaciones Dinámicas
 - Sistema de **Toast** que saluda al usuario de forma personalizada según su hora local (mañana, tarde o noche).
 
-## 🐾 Gestión de Mascotas (Galería Dinámica)
+## Gestión de Mascotas (Galería Dinámica)
 
 La sección de mascotas es totalmente dinámica. No necesitas editar el HTML para añadir o quitar mascotas.
 
