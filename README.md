@@ -1,6 +1,6 @@
 # Portafolio - Manuel Vasquez
 
-Bienvenido al repositorio de mi portafolio profesional. Este proyecto es un sitio web estático de alto rendimiento, diseñado con una estética moderna (cyberpunk/glassmorphism) y una arquitectura modular pensada para la escalabilidad.
+Bienvenido al repositorio de mi portafolio profesional. Este proyecto es un sitio web estático de alto rendimiento, diseñado con una estética moderna glassmorphism y una arquitectura modular pensada para la escalabilidad.
 
 ## 🚀 Resumen del Proyecto
 
