@@ -1,115 +1,62 @@
-# Portafolio de Manuel Vasquez
+# Portafolio - Manuel Vasquez
 
-Este repositorio contiene un portafolio personal estático con diseño responsivo y componentes JavaScript modulares. El sitio está compuesto por una página principal de presentación y una página secundaria dedicada a una galería de mascotas con datos cargados dinámicamente.
+Portafolio personal estático de alto rendimiento. Diseño responsivo, animaciones modernas y arquitectura modular.
 
 ## Descripción
 
-- Sitio web estático construido con HTML, CSS y JavaScript moderno.
-- Página principal (`index.html`) con secciones de inicio, tecnologías, proyectos, servicios y contacto.
-- Página de mascotas (`mascotas.html`) con galería dinámica, botones interactivos y mensajes de bienvenida.
-- Estructura modular de CSS y JS para separar responsabilidades entre estilos, datos y comportamiento.
+- **arquitectura modular**: separación de estilos (BEM), lógica (ES6+) y datos (JSON).
+- **diseño premium**: gradientes animados, glassmorphism y bordes dinámicos.
+- **componentes**:
+    - **imperativo**: `PetCard.js` (DOM manual).
+    - **declarativo**: `TechCard.js` (Web Components).
 
 ## Características
 
-- Navegación responsiva con menú hamburguesa.
-- Hero section con presentación profesional.
-- Sección de tecnologías con tarjetas visuales.
-- Sección de proyectos destacados.
-- Sección de servicios.
-- Página de mascotas con tarjetas generadas desde JSON.
-- Componente `tech-card` para tarjetas de tecnología.
-- Mensaje toast de bienvenida según la hora del día.
-- Botón de WhatsApp para contacto rápido.
-- Buenas prácticas de modularidad y código organizado.
+- ✅ **navegación**: barra fija y responsiva con menú hamburguesa (solo CSS).
+- ✅ **bordes animados**: efecto de luz giratoria en tarjetas.
+- ✅ **modal**: ventana de contacto integrada.
+- ✅ **galería**: carga dinámica de mascotas desde JSON.
+- ✅ **toast**: bienvenida personalizada según la hora.
+- ✅ **optimización**: incluye `style.min.css` para producción.
 
-## Estructura del proyecto
+## Estructura
 
-├── index.html
-├── LICENSE
-├── mascotas.html
-├── public
-│   ├── img
-│   │   ├── ManuelVasquezPhoto.webp
-│   │   ├── pets
-│   │   │   ├── ares.webp
-│   │   │   ├── camille.webp
-│   │   │   ├── dalilaydante.webp
-│   │   │   ├── leila.webp
-│   │   │   ├── lucky.webp
-│   │   │   ├── perla.webp
-│   │   │   └── princesa.webp
-│   │   ├── placeholder-api.svg
-│   │   ├── placeholder-portafolio.svg
-│   │   ├── placeholder-tareas.svg
-│   │   └── whatsapp.webp
-│   └── video
-├── README.md
-└── src
-    ├── components
-    │   ├── atoms
-    │   ├── layouts
-    │   ├── molecules
-    │   ├── organisms
-    │   └── pages
-    ├── css
-    │   ├── animated-border.css
-    │   ├── big-card.css
-    │   ├── buttons.css
-    │   ├── footer.css
-    │   ├── hero-section.css
-    │   ├── navbar.css
-    │   ├── pets.css
-    │   ├── projects-section.css
-    │   ├── services-section.css
-    │   ├── style.css
-    │   ├── technologies-section.css
-    │   ├── toast.css
-    │   └── whatsapp-button.css
-    └── js
-        ├── data
-        │   └── PetData.json
-        ├── main.js
-        ├── model
-        │   └── Pet.js
-        ├── petsScript.js
-        ├── services
-        │   ├── GalleryManager.js
-        │   ├── GreetingManager.js
-        │   └── Toast.js
-        └── ui
-            └── PetCard.js
+```text
+├── index.html              # home
+├── mascotas.html           # galería
+├── public/                 # multimedia
+└── src/
+    ├── css/                # estilos y minificado
+    │   ├── style.min.css   # bundle final
+    │   └── ...             
+    └── js/
+        ├── scripts.js      # lógica home
+        ├── petsScript.js   # lógica mascotas
+        ├── data/           # json
+        ├── services/       # modales, toasts, gallery manager
+        ├── types/          # modelos (Pet.js)
+        └── ui/             # componentes (Cards)
+```
 
-## 🛠 Tecnologías utilizadas
+## 🛠 Tecnologías
 
-- HTML5
-- CSS3
-- JavaScript ES6+ (módulos)
-- API Fetch
-- Componentes Web nativos
-- Animaciones CSS
+- HTML5, CSS3 (BEM, Variables, Conic-gradients)
+- JavaScript ES6+ (Módulos, Async/Await, Web Components)
+- Git para control de versiones.
 
-## 📦 Cómo ejecutar el proyecto
+## 📦 Ejecución
 
-Este sitio es estático. Se recomienda ejecutarlo con una extensión de servidor local, ya que `fetch` de JSON puede fallar con `file://`.
+1. clonar repositorio.
+2. usar **Live Server** (necesario para `fetch` de JSON).
 
-**Opción recomendada:**
-- Usar **Live Server** en VSCode u otra extensión equivalente de servidor local.
+## Notas
 
-##  Notas de entrega final
-
-- El proyecto no requiere instalación de dependencias.
-- `index.html` y `mascotas.html` se pueden desplegar como sitio estático.
-- La galería de mascotas se puede ampliar editando `src/js/data/PetData.json`.
-- `TechCard` y `PetCard` son dos formas distintas de renderizado de tarjetas usadas en el proyecto.
-
-## ✨ Mejoras futuras sugeridas
-
-- Añadir formulación de contacto funcional.
-- Mejorar las rutas y enlaces internos para navegación más fluida.
-- Incorporar pruebas unitarias para `PetCard`, `TechCard` y los servicios.
-- Añadir más contenido real a los proyectos y servicios.
+- código limpio y sin redundancias.
+- sin dependencias externas.
+- documentado en español.
 
 ## Contacto
 
-- WhatsApp: `https://wa.me/573016778673`
-- Autor: Manuel Vasquez
+- **autor**: Manuel Vasquez
+- **whatsapp**: [chat](https://wa.me/573016778673)
+- **github**: [manulzweb](https://github.com/manulzweb)
