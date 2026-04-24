@@ -1,0 +1,1441 @@
+﻿/* Estilos globales y variables del proyecto */
+:root {
+    --bg-dark: #000000;
+    --bg-body: #080808;
+
+    --accent-900: #2d004d;
+    --accent-800: #4a0080;
+    --accent-700: #7100c2;
+    --accent-600: #8c25db;
+    --accent-500: #a846f3;
+    --accent-400: #c269f7;
+    --accent-300: #db8dfa;
+    --accent-200: #ebbafe;
+    --accent-100: #f7e6ff;
+
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --text-disabled: #4d4d4d;
+    --big-title: 3.2rem;
+    --glass-white: rgba(4, 4, 4, 0.05);
+    --glow-shadow: rgba(113, 0, 194, 0.35);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+   
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg {
+    background-color: var(--bg-body);
+}
+
+strong {
+    background: linear-gradient(135deg, #963896 0%, #7f2ac1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 60vh;
+    background-color: var(--dark);
+    color: var(--text-main);
+}
+
+.section-title {
+    font-size: var(--big-title);
+    text-transform: uppercase;
+    color: var(--accent-400);
+    padding: 1rem 0rem;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.2rem;
+    text-align: left;
+    max-width: 650px;
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --big-title: 2.4rem;
+    }
+
+    .section {
+        padding: 2rem 1.5rem 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 15px;
+    }
+
+    :root {
+        --big-title: 2rem;
+    }
+
+    .section {
+        padding: 3rem 1.2rem 3rem 1.2rem;
+    }
+}
+/* Estilos para la tarjeta principal de presentaciÃ³n */
+.big-card {
+    min-width: 200px;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(255, 253, 254, 0.035);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: all ease 0.25s;
+}
+
+.big-card:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+    scale: 1.02;
+}
+
+.big-card__name {
+    background: linear-gradient(to right, #7100c2 0%, #ff00c8 100%);
+    background-clip: text;
+    background-size: cover;
+    color: transparent;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.big-card__subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.big-card__description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.big-card header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.big-card__actions {
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .big-card {
+        padding: 1.5rem;
+    }
+
+    .big-card__name {
+        font-size: 2.5rem;
+    }
+
+    .big-card__actions {
+        display: flex;
+        justify-content: end;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .big-card {
+        padding: 1.2rem;
+    }
+
+    .big-card__name {
+        font-size: 2rem;
+    }
+}
+/* Estilos generales para botones */
+
+/* Clase base para todos los botones */
+.btn, .btn--primary, .btn--secondary, .btn--contact {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 14px;
+    font-weight: bold;
+    transition: transform 0.25s ease;
+    border: none;
+}
+
+/* Estilo para botones primarios y de contacto */
+.btn--primary, .btn--contact {
+    background-color: var(--accent-700) !important;
+    color: var(--text-main) !important;
+}
+
+/* Ajuste especÃ­fico para el botÃ³n de contacto en el navbar */
+.btn--contact {
+    padding: 0;
+}
+
+/* Efectos al pasar el mouse (hover) */
+.btn--primary:hover, .btn--contact:hover  {
+    transform: translateY(-3px);
+    box-shadow: 0 0px 10px var(--accent-600);
+    filter: brightness(110%);
+}
+
+/* Estilo cuando el botÃ³n ya ha sido visitado */
+.btn--primary:visited {
+    transform: translateY(0);
+    outline: 3px solid var(--text-main);
+}
+
+/* Estilo cuando el botÃ³n de contacto estÃ¡ presionado */
+.btn--contact:active {
+    transform: translateY(0);
+    outline: 3px solid var(--text-main) !important;
+}
+
+/* Estilo para botones secundarios (con fondo traslÃºcido) */
+.btn--secondary {
+    color: #CBD5E1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+}
+/* LÃ³gica para los bordes animados con gradientes cÃ³nicos */
+
+/* Registramos la variable --angle para poder animarla con keyframes */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Contenedor base para los elementos con borde animado */
+[class*="animated-border-"] {
+    z-index: 0;
+    position: relative;
+    --border-padding: 0px;
+    --border-radius: 0px;
+}
+
+/* Creamos el efecto de borde usando pseudo-elementos ::before y ::after */
+[class*="animated-border-"]::after,
+[class*="animated-border-"]::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    padding: var(--border-padding);
+    border-radius: var(--border-radius);
+
+    /* Gradiente circular que gira usando la variable --angle */
+    background: conic-gradient(from var(--angle) in hsl shorter hue, var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700));
+    animation: spinning-border 4s linear infinite;
+
+    /* Usamos mÃ¡scaras para mostrar solo el borde y no el fondo del gradiente */
+    --mask: linear-gradient(#000000 0 0);
+    -webkit-mask: var(--mask) content-box, var(--mask);
+    mask: var(--mask) content-box, var(--mask);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* El pseudo-elemento ::after se usa para el efecto de brillo (glow) */
+[class*="animated-border-"]::after {
+    filter: blur(1rem);
+}
+
+/* Configuraciones de grosor y redondeado */
+.animated-border-2 {
+    --border-padding: 2px;
+    --border-radius: 24px;
+}
+
+.animated-border-5 {
+    --border-padding: 5px;
+    --border-radius: 24px;
+}
+
+/* Variantes para bordes en un solo lado */
+.animated-border-top-2 {
+    --border-padding: 2px 0 0 0;
+}
+
+.animated-border-top-5 {
+    --border-padding: 5px 0 0 0;
+}
+
+.animated-border-right-2 {
+    --border-padding: 0 2px 0 0;
+}
+
+.animated-border-right-5 {
+    --border-padding: 0 5px 0 0;
+}
+
+.animated-border-bottom-2 {
+    --border-padding: 0 0 2px 0;
+}
+
+.animated-border-bottom-5 {
+    --border-padding: 0 0 5px 0;
+}
+
+.animated-border-left-2 {
+    --border-padding: 0 0 0 2px;
+}
+
+.animated-border-left-5 {
+    --border-padding: 0 0 0 5px;
+}
+
+/* AnimaciÃ³n que hace rotar el Ã¡ngulo del gradiente */
+@keyframes spinning-border {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+/* Estilos para la secciÃ³n de presentaciÃ³n (Hero) */
+
+/* Fondo con gradiente sutil para la secciÃ³n hero */
+.hero-section-bg {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(31, 28, 107, 0.25) 100%);
+}
+
+/* Layout principal del Hero: 2 columnas (foto y texto) */
+.hero {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 420px 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    height: 100% !important;
+}
+
+/* Contenedor de la imagen de perfil con transiciÃ³n suave */
+.hero__img-container {
+    max-width: 100%;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.25s ease 1s;
+    transition: translate 0.5s ease;
+}
+
+/* Efecto de zoom y elevaciÃ³n en la foto de perfil */
+.hero__img-container:hover {
+    transform: scale(1.05);
+    translate: 0px -10px;
+}
+
+/* Estilo de la imagen de perfil */
+.hero__img {
+    object-fit: cover;
+    border-radius: 19px;
+    width: 100%;
+    height: auto;
+}
+
+/* Ajustes responsivos para tablets */
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 320px 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Ajustes responsivos para mÃ³viles (cambio a 1 columna) */
+@media (max-width: 768px) {
+    .hero-section-bg {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(31, 28, 107, 0.25) 100%);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        justify-items: center;
+    }
+}
+
+/* Ajustes finales para pantallas muy pequeÃ±as */
+@media (max-width: 425px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 82%;
+    }
+}
+/* Estilos para la cuadrÃ­cula de tecnologÃ­as */
+
+/* Contenedor principal de la secciÃ³n de tecnologÃ­as */
+.technologies {
+    flex-direction: column;
+    width: 100%;
+}
+
+/* IntroducciÃ³n de la secciÃ³n con texto centrado */
+.technologies__intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* CuadrÃ­cula de 3 columnas para las tarjetas de tecnologÃ­a */
+.technologies__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+/* Tarjeta de tecnologÃ­a individual */
+.tech-card {
+    background: rgba(255, 253, 254, 0.035);
+    border-radius: 20px;
+    padding: 1.8rem 1.2rem;
+    outline: 2px dotted var(--accent-700);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100%;
+
+    /* AnimaciÃ³n de entrada al hacer scroll */
+    animation: appearance linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+/* Efecto hover en la tarjeta */
+.tech-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 253, 254, 0.08);
+    outline: 2px solid var(--accent-500);
+}
+
+/* Icono de la tecnologÃ­a con gradiente y sombra */
+.tech-card__icon {
+    font-size: 3.5rem !important;
+    background: linear-gradient(135deg, var(--accent-300), var(--accent-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(219, 141, 250, 0.5));
+}
+
+/* Contenedor del contenido de la tarjeta */
+.tech-card__content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TÃ­tulo de la tarjeta */
+.tech-card__title {
+    color: var(--accent-400);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+/* Lista de items dentro de la tarjeta */
+.tech-card__list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    color: var(--text-main);
+}
+
+/* Estilo de cada item de la lista */
+.tech-card__list li {
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+}
+
+/* Quitamos el borde al Ãºltimo item */
+.tech-card__list li:last-child {
+    border-bottom: none;
+}
+
+
+/* AdaptaciÃ³n para pantallas medianas (2 columnas) */
+@media (max-width: 1024px) {
+    .technologies__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* AdaptaciÃ³n para pantallas pequeÃ±as (1 columna y layout horizontal interno) */
+@media (max-width: 650px) {
+    .technologies__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding: 1.2rem;
+    }
+
+    .tech-card__icon {
+        font-size: 2.5rem !important;
+        margin-right: 1.7rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tech-card__content {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0rem 0.5rem;
+    }
+
+    .tech-card__list li {
+        padding: 0.2rem 0;
+    }
+
+    .tech-card__title {
+        text-align: center;
+    }
+}
+/* Estilos para las tarjetas de proyectos */
+
+/* Contenedor principal de la secciÃ³n de proyectos */
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 420px;
+    gap: 3rem;
+}
+
+/* CuadrÃ­cula de proyectos (3 columnas por defecto) */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* IntroducciÃ³n de la secciÃ³n */
+.projects__intro {
+    text-align: center;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+/* Estilo individual de la tarjeta de proyecto */
+.project-card {
+    background: rgba(255, 253, 254, 0.035);
+    border-radius: 20px;
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, outline-color 0.3s ease, outline-style 0.1s ease, background 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    /* AnimaciÃ³n de apariciÃ³n al hacer scroll */
+    animation: appearance linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+/* Efecto hover en la tarjeta de proyecto */
+.project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 253, 254, 0.08);
+    outline: 2px solid var(--accent-500);
+}
+
+/* Imagen de vista previa del proyecto */
+.project-card__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Contenido de texto de la tarjeta */
+.project-card__content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Contenedor de botones de acciÃ³n en la tarjeta */
+.project-card__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* AnimaciÃ³n genÃ©rica de apariciÃ³n */
+@keyframes appearance {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* AdaptaciÃ³n para pantallas medianas (2 columnas) */
+@media (max-width: 1024px) {
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ajustes de descripciÃ³n para pantallas pequeÃ±as */
+@media (max-width: 720px) {
+    .section-description {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* AdaptaciÃ³n para pantallas pequeÃ±as (1 columna) */
+@media (max-width: 425px) {
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilos para la secciÃ³n de servicios */
+
+/* Contenedor base de la secciÃ³n */
+.services {
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Texto introductorio centrado */
+.services__intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* CuadrÃ­cula flexible para los servicios */
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Tarjeta de servicio individual */
+.service-card {
+    background: rgba(255, 253, 254, 0.035);
+    border-radius: 20px;
+    padding: 2rem;
+    outline: 2px dotted var(--accent-700);
+    text-align: center;
+    transition: transform 0.3s ease, outline 1s ease;
+    
+    /* AnimaciÃ³n de apariciÃ³n gradual al bajar con el scroll */
+    animation: appearance linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+/* Efecto hover: eleva la tarjeta y cambia el borde */
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 253, 254, 0.06);
+    outline: 2px solid var(--accent-700);
+}
+
+/* Icono del servicio con gradiente y sombra de brillo */
+.service-card__icon {
+    font-size: 3.5rem !important;
+    background: linear-gradient(135deg, var(--accent-300), var(--accent-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(235, 184, 255, 0.4));
+}
+
+/* TÃ­tulo de la tarjeta de servicio */
+.service-card__subtitle {
+    color: var(--accent-400);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+/* Estilos para el pie de pÃ¡gina */
+
+/* Contenedor principal del footer con efecto de cristal */
+.footer {
+    background: rgba(255, 253, 254, 0.02);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 253, 254, 0.1);
+    padding: 1rem 2rem;
+}
+
+/* Layout del footer: 3 columnas */
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TÃ­tulo de la secciÃ³n en el footer */
+.footer__title {
+    color: var(--accent-400);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* SubtÃ­tulos de las columnas del footer */
+.footer__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Lista de informaciÃ³n de contacto */
+.footer__contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Cada item de contacto (con icono) */
+.footer__contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Iconos de contacto */
+.footer__contact-list .material-icons {
+    color: var(--accent-600);
+    font-size: 1.2rem;
+}
+
+/* LÃ­nea final de crÃ©ditos y copyright */
+.footer__bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 253, 254, 0.05);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* AdaptaciÃ³n para pantallas medianas (cambio de columnas) */
+@media (max-width: 1024px) {
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 0rem;
+        gap: 1rem;
+    }
+
+    /* La primera columna ocupa todo el ancho y se centra */
+    .footer__container > *:nth-child(1) {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+}
+
+/* AdaptaciÃ³n para mÃ³viles (una sola columna) */
+@media (max-width: 768px) {
+    .footer__container {
+        padding: 0 3rem;
+        grid-template-columns: 1fr;
+    }
+    .footer__container > *:nth-child(1) {
+        justify-self: start;
+    }
+    .footer__subtitle, .footer__title {
+        margin: 0;
+    }
+    .footer__contact-list li {
+        margin: 0.3rem 0;
+    }
+    .footer__bottom { 
+        padding: 1rem 0rem 0rem 0rem;
+    }
+}
+/* Estilos para la barra de navegaciÃ³n responsive */
+
+/* Clase para mantener la barra fija en la parte superior */
+.sticky {
+    position: sticky !important;
+    top: 0;
+    z-index: 1 !important;
+}
+
+/* Contenedor principal de la navegaciÃ³n */
+.navbar {
+    background: linear-gradient(180deg, #0F172A 0%, #340e3e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 3vw;
+}
+
+/* TÃ­tulo o Logo del portafolio */
+.navbar__title {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* Lista de enlaces de navegaciÃ³n */
+.navbar__items {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    list-style: none;
+}
+
+/* Estilo individual de cada enlace (tipo cÃ¡psula) */
+.navbar__link {
+    min-width: 100px;
+    max-width: 100px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #CBD5E1;
+    background-color: var(--glass-white);
+    padding: 0.5rem 0.8rem;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+/* AnimaciÃ³n de elevaciÃ³n al pasar el mouse */
+.button-animation:hover {
+    transition: all ease 0.25s;
+    transform: translateY(-3px);
+}
+
+/* Checkbox oculto para controlar el menÃº mÃ³vil sin JavaScript */
+.navbar__toggle-check {
+    display: none;
+}
+
+/* BotÃ³n de hamburguesa para mÃ³viles */
+.navbar__toggle-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Las tres lÃ­neas del botÃ³n de hamburguesa */
+.navbar__toggle-btn span {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.25s ease,
+        transform 0.35s ease;
+}
+
+/* AdaptaciÃ³n para tablets y mÃ³viles horizontales */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.5rem;
+
+        width: 90%;
+        justify-content: space-between;
+
+        /* Efecto de cristal (Glassmorphism) */
+        background: rgba(110, 0, 255, 0.23);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 50px;
+        border: 1px solid rgba(200, 150, 255, 0.3);
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(110, 0, 255, 0.1),
+            inset 0 0 30px 15px rgba(180, 100, 255, 0.15);
+    }
+
+    .navbar__title {
+        flex: 0;
+        font-size: 1.2rem;
+    }
+
+    .navbar__items {
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    /* Ocultamos el texto de los enlaces para ahorrar espacio */
+    .navbar__link-text {
+        display: none;
+    }
+
+    .navbar__link {
+        padding: 0.3rem clamp(0.3rem, 2vw, 0.8rem);
+        min-width: 30px;
+        max-width: 50px;
+    }
+}
+
+/* AdaptaciÃ³n para mÃ³viles pequeÃ±os (MenÃº desplegable) */
+@media (max-width: 425px) {
+
+    .navbar__toggle-btn {
+        display: flex;
+        z-index: 101;
+    }
+
+    .navbar {
+        width: auto;
+        left: auto;
+        transform: none;
+
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+        gap: 0rem 1rem;
+        max-width: 242px;
+        transition: border-radius 0.2s ease 5s;
+    }
+
+    /* Ocultamos los items inicialmente en mÃ³vil */
+    .navbar__items {
+        grid-column: 1 / -1;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+
+        transition:
+            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            padding 0.3s ease;
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    /* Estilos cuando el menÃº estÃ¡ abierto */
+    .navbar:has(.navbar__toggle-check:checked) {
+        border-radius: 30px;
+        transition: border-radius 0.2s ease;
+    }
+
+    .navbar__toggle-check:checked~.navbar__items {
+        max-height: 400px;
+        opacity: 1;
+        pointer-events: auto;
+        padding: 1rem 0rem 0rem;
+    }
+
+    /* AnimaciÃ³n de entrada para cada enlace */
+    .navbar__toggle-check:checked~.navbar__items li {
+        animation: navLinkIn 300ms ease both;
+    }
+
+    /* Retrasos progresivos para el efecto de cascada */
+    .navbar__toggle-check:checked~.navbar__items li:nth-child(1) { animation-delay: 60ms; }
+    .navbar__toggle-check:checked~.navbar__items li:nth-child(2) { animation-delay: 120ms; }
+    .navbar__toggle-check:checked~.navbar__items li:nth-child(3) { animation-delay: 180ms; }
+    .navbar__toggle-check:checked~.navbar__items li:nth-child(4) { animation-delay: 240ms; }
+    .navbar__toggle-check:checked~.navbar__items li:nth-child(5) { animation-delay: 300ms; }
+
+    @keyframes navLinkIn {
+        from {
+            scale: 0.5;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* TransformaciÃ³n del botÃ³n de hamburguesa en una 'X' */
+    .navbar__toggle-check:checked+.navbar__toggle-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5.5px, 5.5px);
+    }
+
+    .navbar__toggle-check:checked+.navbar__toggle-btn span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .navbar__toggle-check:checked+.navbar__toggle-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(5.5px, -5.5px);
+    }
+}
+/* Estilos para el mensaje flotante (toast) */
+.toast-glass {
+    position: fixed;
+    left: 2rem;
+    bottom: 1rem;
+    background: rgba(110, 0, 255, 0.23);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 24px;
+    border: 1px solid rgba(200, 150, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(110, 0, 255, 0.1),
+        inset 0 0 30px 15px rgba(180, 100, 255, 0.15);
+    color: var(--text-main);
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    animation-delay: 1s;
+    animation: fadeInOut 5s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0% { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    15% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    85% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+}
+
+@media (max-width: 600px) {
+    .toast-glass {
+        left: 1rem;
+        right: 40%;
+        transform: translateX(50%);
+    }
+}
+/* Estilos para la ventana modal de contacto */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal__content {
+    position: relative;
+    background: linear-gradient(180deg, #0F172A 0%, #1a0d2e 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 40px rgba(110, 0, 255, 0.15);
+    border: 1px solid rgba(200, 150, 255, 0.2);
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #CBD5E1;
+    transition: color 0.2s ease;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__close:hover {
+    color: #ffffff;
+}
+
+.modal__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #CBD5E1;
+}
+
+.form__input {
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(200, 150, 255, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form__input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(200, 150, 255, 0.6);
+    box-shadow: 0 0 15px rgba(110, 0, 255, 0.2);
+}
+
+.form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form__submit {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #6e00ff 0%, #8b00ff 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(110, 0, 255, 0.4);
+}
+
+.form__submit:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal__content {
+        padding: 2rem;
+        max-width: 100%;
+    }
+
+    .modal__title {
+        font-size: 1.5rem;
+    }
+
+    .form__input {
+        padding: 0.7rem 0.9rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .modal__content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .modal__close {
+        font-size: 1.5rem;
+    }
+
+    .modal__title {
+        font-size: 1.3rem;
+    }
+
+    .modal__form {
+        gap: 1rem;
+    }
+}
+/* Estilos para el botÃ³n flotante de WhatsApp */
+.whatsapp-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 20px;
+    animation: infinite pulse 2s ease-in-out;
+}
+
+.whatsapp-button {
+    filter: drop-shadow(0px 0px 10px green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center
+
+}
+
+.whatsapp-container:hover{
+    animation-play-state: paused
+}
+
+.whatsapp-button:hover {
+    animation: infinite scale 1s ease-in-out;
+    scale: 1.05;
+}
+
+@keyframes scale {
+    0% { transform: scale(1);}
+    50% { transform:scale(1.05);}
+    100% { transform: scale(1);}
+}
+
+@keyframes pulse {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+    100% { transform: translateY(0px);}
+}
+/* Estilos para la galerÃ­a de mascotas */
+.pets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 3rem;
+}
+
+.pets__intro {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.pets__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.pet-card {
+    background: rgba(255, 253, 254, 0.035);
+    border-radius: 20px;
+    outline: 2px dotted var(--accent-700);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    animation: appearance ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.pet-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 253, 254, 0.06);
+    outline: 2px solid var(--accent-500);
+}
+
+.pet-card__fig {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background-color: #0b071a;
+}
+
+.pet-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.pet-card:hover .pet-card__img {
+    transform: scale(1.08);
+}
+
+.pet-card__body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pet-card__title {
+    color: var(--accent-400);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pet-card__desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .pets__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pets {
+        padding: 6rem 0 0 0;
+    }
+
+    .pets__grid {
+        padding: 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .pets {
+        padding: 3rem 0 0 0;
+    }
+
+    .pets__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pet-card__fig {
+        height: 200px;
+    }
+}

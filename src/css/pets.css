@@ -1,3 +1,4 @@
+/* Estilos para la galería de mascotas */
 .pets {
     display: flex;
     flex-direction: column;
@@ -18,7 +19,6 @@
 
 .pets__grid {
     display: grid;
-    /* Grid Columns 3 en Desktop */
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     width: 100%;
@@ -33,13 +33,11 @@
     -webkit-backdrop-filter: blur(5px);
     transition: transform 0.3s ease, border-color 0.3s ease;
 
-    /* Flexbox interno */
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Muy importante para que las imágenes no alteren los bordes redondeados */
 
-    animation: aparicion ease forwards;
+    animation: appearance ease forwards;
     animation-timeline: view();
     animation-range: entry 0% cover 30%;
 }
@@ -52,26 +50,22 @@
 
 .pet-card__fig {
     width: 100%;
-    /* Alto estricto para evitar alteraciones del contenedor */
     height: 220px;
     position: relative;
     overflow: hidden;
     background-color: #0b071a;
-    /* Placeholder-ish bg before image loads */
 }
 
 .pet-card__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Recortada perfectamente */
     object-position: center;
     transition: transform 0.4s ease;
 }
 
 .pet-card:hover .pet-card__img {
     transform: scale(1.08);
-    /* Micro-animación en hover */
 }
 
 .pet-card__body {
@@ -79,7 +73,6 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Ocupa el espacio restante horizontal/verticalmente */
 }
 
 .pet-card__title {
@@ -94,12 +87,9 @@
     line-height: 1.5;
 }
 
-/* MEDIA QUERIES (Semana 3) */
-
 @media (max-width: 1024px) {
     .pets__grid {
         grid-template-columns: repeat(3, 1fr);
-        /* Tablet pide 3 columnas en la Story */
     }
 }
 
@@ -121,7 +111,6 @@
 
     .pets__grid {
         grid-template-columns: repeat(1, 1fr);
-        /* Una columna en celulares frontales muy estrechos */
     }
 
     .pet-card__fig {

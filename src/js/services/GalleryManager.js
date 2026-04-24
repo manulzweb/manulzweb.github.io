@@ -1,19 +1,22 @@
+/**
+ * Clase encargada de gestionar la visibilidad de la galería de mascotas.
+ * Controla las animaciones de apertura y cierre y actualiza el texto del botón.
+ */
 export class GalleryManager {
     /**
-     * Component focus just on showing or hiding the gallery.
-     * Single Responsibility Principle (SRP) and Dependency Inversion Principle (DIP).
-     *
-     * @param {HTMLElement} btnElement - DOM element to toggle the gallery.
-     * @param {HTMLElement} galleryContainer - DOM container of the gallery.
+     * @param {HTMLElement} btnElement - El botón que dispara la acción de mostrar/ocultar.
+     * @param {HTMLElement} galleryContainer - El contenedor que contiene los elementos de la galería.
      */
-    // constructor of the class
     constructor(btnElement, galleryContainer) {
         this.btnElement = btnElement;
         this.galleryContainer = galleryContainer;
 
         this.init();
     }
-    // method to initialize the gallery
+
+    /**
+     * Configura el listener de eventos inicial.
+     */
     init() {
         if (!this.btnElement || !this.galleryContainer) return;
 
@@ -21,7 +24,10 @@ export class GalleryManager {
             this.toggleVisibility();
         });
     }
-    // method to toggle the visibility of the gallery
+
+    /**
+     * Alterna entre mostrar y ocultar la galería basándose en su estado actual.
+     */
     toggleVisibility() {
         const isHidden = this.galleryContainer.style.display === 'none';
 
@@ -31,26 +37,35 @@ export class GalleryManager {
             this.hideGallery();
         }
     }
-    // method to show the gallery
+
+    /**
+     * Muestra la galería con una animación de entrada.
+     */
     showGallery() {
         this.galleryContainer.style.display = 'grid';
-        this.btnElement.textContent = 'Ocultar Galería';
+        this.btnElement.textContent = 'Hide Gallery';
 
+        // Animación fluida de aparición (Fade In + Slide Up)
         this.galleryContainer.animate([
             { opacity: 0, transform: 'translateY(20px)' },
             { opacity: 1, transform: 'translateY(0)' }
         ], { duration: 500, easing: 'ease-out' });
     }
-    // method to hide the gallery
+
+    /**
+     * Oculta la galería con una animación de salida.
+     */
     hideGallery() {
+        // Animación de desaparición (Fade Out + Slide Up)
         const animation = this.galleryContainer.animate([
             { opacity: 1, transform: 'translateY(0)' },
             { opacity: 0, transform: 'translateY(-20px)' }
         ], { duration: 300, easing: 'ease-in' });
 
+        // Esperamos a que la animación termine antes de cambiar el display a 'none'
         animation.onfinish = () => {
             this.galleryContainer.style.display = 'none';
-            this.btnElement.textContent = 'Mostrar Galería';
+            this.btnElement.textContent = 'Show Gallery';
         };
     }
 }

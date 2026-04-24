@@ -1,15 +1,17 @@
+/* Estilos para las tarjetas de proyectos */
+
+/* Contenedor principal de la sección de proyectos */
 .projects {
     display: flex;
     flex-direction: column;
-    /* Cambiado a columna por defecto para mejor control */
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    /* Evita que se estire demasiado en pantallas gigantes */
     min-height: 420px;
     gap: 3rem;
 }
 
+/* Cuadrícula de proyectos (3 columnas por defecto) */
 .projects__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -18,17 +20,17 @@
     justify-content: space-around;
 }
 
+/* Introducción de la sección */
 .projects__intro {
     text-align: center;
     max-width: 100%;
     padding: 1rem;
 }
 
-/* --- Animaciones y Cards --- */
-.proyecto-card {
+/* Estilo individual de la tarjeta de proyecto */
+.project-card {
     background: rgba(255, 253, 254, 0.035);
     border-radius: 20px;
-    /* Igual que tech-card */
     padding: 1.5rem;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -38,63 +40,64 @@
     flex-direction: column;
     height: 100%;
 
-    /* Animación aplicada a todas las pantallas */
-    animation: aparicion linear forwards;
+    /* Animación de aparición al hacer scroll */
+    animation: appearance linear forwards;
     animation-timeline: view();
     animation-range: entry 0% cover 25%;
 }
 
-.proyecto-card:hover {
+/* Efecto hover en la tarjeta de proyecto */
+.project-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 253, 254, 0.08);
-    /* Brillo al hover igual que tech-card */
     outline: 2px solid var(--accent-500);
-    /* Cambio de puntos a sólido */
 }
 
-/* Imagen del Proyecto */
-.proyecto-card__img {
+/* Imagen de vista previa del proyecto */
+.project-card__img {
     width: 100%;
-    height: 180px;
+    height: auto;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 1.2rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.proyecto-card__content {
+/* Contenido de texto de la tarjeta */
+.project-card__content {
     display: flex;
     gap: 1rem;
     flex-direction: column;
     flex-grow: 1;
-    /* Rellena el espacio sobrante para empujar los botones abajo */
 }
 
-.proyecto-card__actions {
+/* Contenedor de botones de acción en la tarjeta */
+.project-card__actions {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
-@keyframes aparicion {
+/* Animación genérica de aparición */
+@keyframes appearance {
     from {
         opacity: 0;
         transform: translateY(50px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Adaptación para pantallas medianas (2 columnas) */
 @media (max-width: 1024px) {
     .projects__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-
+/* Ajustes de descripción para pantallas pequeñas */
 @media (max-width: 720px) {
     .section-description {
         text-align: center;
@@ -102,9 +105,9 @@
     }
 }
 
+/* Adaptación para pantallas pequeñas (1 columna) */
 @media (max-width: 425px) {
     .projects__grid {
         grid-template-columns: 1fr;
     }
-
 }

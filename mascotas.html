@@ -1,3 +1,4 @@
+<!-- Galería de mascotas -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,15 +20,15 @@
     <link rel="stylesheet" href="src/css/toast.css">
     <link rel="stylesheet" href="src/css/modal.css">
 </head>
+
 <body>
 
+    <!-- Navegación -->
     <header class="sticky animated-border-bottom-2">
         <nav class="navbar" aria-label="Navegación principal">
-            <!-- Logo o título del sitio -->
             <span class="navbar__title">ManulzWeb</span>
-            <!-- Botón de menú hamburguesa para pantallas pequeñas -->
             <input type="checkbox" id="nav-toggle" class="navbar__toggle-check">
-            <label for="nav-toggle" class="navbar__toggle-btn">
+            <label for="nav-toggle" class="navbar__toggle-btn pointer">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -36,7 +37,7 @@
             <ul class="navbar__items">
 
                 <li>
-                    <a class="navbar__link button-animation" href="index.html" aria-label="home">
+                    <a class="navbar__link button-animation pointer" href="index.html" aria-label="home">
                         <span class="material-icons">home</span>
                         <div class="navbar__link-text">
                             Inicio
@@ -44,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="index.html#projects" aria-label="Proyectos">
+                    <a class="navbar__link button-animation pointer" href="index.html#projects" aria-label="Proyectos">
                         <span class="material-icons">folder</span>
                         <div class="navbar__link-text">
                             Proyectos
@@ -52,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="index.html#services" aria-label="Servicios">
+                    <a class="navbar__link button-animation pointer" href="index.html#services" aria-label="Servicios">
                         <span class="material-icons">logo_dev</span>
                         <div class="navbar__link-text">
                             Servicios
@@ -60,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="mascotas.html" aria-label="pets">
+                    <a class="navbar__link button-animation pointer" href="mascotas.html" aria-label="pets">
                         <span class="material-icons">pets</span>
                         <div class="navbar__link-text">
                             Mascotas
@@ -68,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link btn btn--contact" href="#" id="contact-btn" aria-label="Contacto">
+                    <a class="navbar__link btn btn--contact pointer" href="#" id="contact-btn" aria-label="Contacto">
                         <span class="material-icons">connect_without_contact</span>
                         <div class="navbar__link-text">
                             Contacto
@@ -81,29 +82,28 @@
         </nav>
     </header>
 
+    <!-- Sección de Mascotas -->
     <main class="bg">
         <section class="section pets">
             <article class="pets__intro">
                 <h1 class="section-title">Mis mascotas</h1>
-                <p class="section-description">¡Una galería de mis mascotas con un estilo muy chevre!.</p>
+                <p class="section-description">¡Una galería de las mascotas de mi novia, mira estas ternuritas!.</p>
                 <div style="margin-top:2rem;">
-                    <button id="btn-toggle-gallery" class="btn btn--primary">Ocultar/Mostrar Galería</button>
-                    <button id="btn-saludo-pets" class="btn btn--secondary"
+                    <button id="btn-toggle-gallery" class="btn btn--primary pointer">Ocultar/Mostrar Galería</button>
+                    <button id="btn-saludo-pets" class="btn btn--secondary pointer"
                         style="margin-left:1rem;">Saludar</button>
                 </div>
             </article>
 
             <div id="pets-gallery" class="pets__grid">
-                <!-- Se rellena con js -->
             </div>
         </section>
     </main>
 
-    <!-- Modal de Contacto -->
     <div id="contact-modal" class="modal">
         <div class="modal__overlay"></div>
         <div class="modal__content">
-            <button class="modal__close" id="modal-close">&times;</button>
+            <button class="modal__close pointer" id="modal-close">&times;</button>
             <h2 class="modal__title">Contactame</h2>
             <form class="modal__form" id="contact-form">
                 <div class="form__group">
@@ -116,32 +116,39 @@
                 </div>
                 <div class="form__group">
                     <label for="message" class="form__label">Mensaje</label>
-                    <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+                    <textarea id="message" name="message" class="form__input form__textarea" rows="5"
+                        required></textarea>
                 </div>
-                <button type="submit" class="form__submit btn btn--primary">Enviar</button>
+                <button type="submit" class="form__submit btn btn--primary pointer">Enviar</button>
             </form>
         </div>
     </div>
 
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="footer__container">
-            <div class="footer__content">
+            <div>
                 <h3 class="footer__title">Mi Portafolio</h3>
-                <p class="footer__text">Creando experiencias digitales únicas con código y diseño.</p>
+                <p>Creando experiencias digitales únicas con código y diseño.</p>
             </div>
-            <div class="footer__content">
-                <h4 class="footer__subtitle">Sígueme</h4>
-                <div class="footer__socials">
-                    <a href="https://github.com/manulzweb" class="social-link"><span
-                            class="material-icons iconsize">code</span></a>
-                </div>
+            <div>
+                <h4 class="footer__subtitle">Contacto</h4>
+                <ul class="footer__contact-list">
+                    <li>
+                        <span class="material-icons">email</span>
+                        manuelandresvasquezm21@gmail.com
+                    </li>
+                    <li>
+                        <span class="material-icons">location_on</span>
+                        Barranquilla, Colombia
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="footer__bottom">
             <p>&copy; 2026 Diseñado por Manuel Vasquez</p>
         </div>
     </footer>
-
     <script type="module" src="src/js/petsScript.js"></script>
 </body>
 

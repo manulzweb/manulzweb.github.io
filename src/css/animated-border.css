@@ -1,24 +1,21 @@
-@property --angulo {
+/* Lógica para los bordes animados con gradientes cónicos */
+
+/* Registramos la variable --angle para poder animarla con keyframes */
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
 }
 
-/* 
- * ==========================================
- * CENTRAL SYSTEM OF ANIMATED BORDERS (DRY)
- * ==========================================
- * We catch ANY class that starts with "animated-border-" 
- * and we configure its physical laws only once.
- */
+/* Contenedor base para los elementos con borde animado */
 [class*="animated-border-"] {
     z-index: 0;
     position: relative;
-    /* Default values */
     --border-padding: 0px;
     --border-radius: 0px;
 }
 
+/* Creamos el efecto de borde usando pseudo-elementos ::before y ::after */
 [class*="animated-border-"]::after,
 [class*="animated-border-"]::before {
     z-index: -1;
@@ -30,14 +27,14 @@
     left: 50%;
     translate: -50% -50%;
 
-    /* We inject the dynamic variables */
     padding: var(--border-padding);
     border-radius: var(--border-radius);
 
-    background: conic-gradient(from var(--angulo) in hsl shorter hue, var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700));
-    animation: spinningborder 4s linear infinite;
+    /* Gradiente circular que gira usando la variable --angle */
+    background: conic-gradient(from var(--angle) in hsl shorter hue, var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700), var(--accent-600), var(--accent-500), var(--accent-400), var(--accent-300), var(--accent-200), var(--accent-100), var(--accent-700));
+    animation: spinning-border 4s linear infinite;
 
-    /* Magia de enmascaramiento */
+    /* Usamos máscaras para mostrar solo el borde y no el fondo del gradiente */
     --mask: linear-gradient(#000000 0 0);
     -webkit-mask: var(--mask) content-box, var(--mask);
     mask: var(--mask) content-box, var(--mask);
@@ -45,15 +42,12 @@
     mask-composite: exclude;
 }
 
-/* Blur filter exclusive for after (Glow effect) */
+/* El pseudo-elemento ::after se usa para el efecto de brillo (glow) */
 [class*="animated-border-"]::after {
     filter: blur(1rem);
 }
 
-/* ==========================================
- * USEFUL CLASSES AND VARIANTS
- * ========================================== */
-
+/* Configuraciones de grosor y redondeado */
 .animated-border-2 {
     --border-padding: 2px;
     --border-radius: 24px;
@@ -64,7 +58,7 @@
     --border-radius: 24px;
 }
 
-/* --- Top Borders (Flat) --- */
+/* Variantes para bordes en un solo lado */
 .animated-border-top-2 {
     --border-padding: 2px 0 0 0;
 }
@@ -73,7 +67,6 @@
     --border-padding: 5px 0 0 0;
 }
 
-/* --- Right Borders (Flat) --- */
 .animated-border-right-2 {
     --border-padding: 0 2px 0 0;
 }
@@ -82,7 +75,6 @@
     --border-padding: 0 5px 0 0;
 }
 
-/* --- Bottom Borders (Flat) --- */
 .animated-border-bottom-2 {
     --border-padding: 0 0 2px 0;
 }
@@ -91,7 +83,6 @@
     --border-padding: 0 0 5px 0;
 }
 
-/* --- Left Borders (Flat) --- */
 .animated-border-left-2 {
     --border-padding: 0 0 0 2px;
 }
@@ -100,16 +91,13 @@
     --border-padding: 0 0 0 5px;
 }
 
-
-/* ==========================================
- * ANIMADOR DE GIRO RADIAL
- * ========================================== */
-@keyframes spinningborder {
+/* Animación que hace rotar el ángulo del gradiente */
+@keyframes spinning-border {
     from {
-        --angulo: 0deg;
+        --angle: 0deg;
     }
 
     to {
-        --angulo: 360deg;
+        --angle: 360deg;
     }
 }

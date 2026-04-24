@@ -1,29 +1,18 @@
+/* Estilos globales y variables del proyecto */
 :root {
-    /* --- TUS COLORES ORIGINALES --- */
     --bg-dark: #000000;
     --bg-body: #080808;
 
-    /* --- Escala purpura --- */
     --accent-900: #2d004d;
-    /* Ultra-Deep (Sombra/Fondo) */
     --accent-800: #4a0080;
-    /* Deep */
     --accent-700: #7100c2;
-    /* MID-BASE */
     --accent-600: #8c25db;
-    /* Mid-Light */
     --accent-500: #a846f3;
-    /* LIGHT */
     --accent-400: #c269f7;
-    /* Light-Bright */
     --accent-300: #db8dfa;
-    /* SUPER-LIGHT */
     --accent-200: #ebbafe;
-    /* Ultra-Light */
     --accent-100: #f7e6ff;
-    /* Glint (Casi blanco, ideal para brillo) */
 
-    /* --- TIPOGRAFÍA --- */
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --text-disabled: #4d4d4d;
@@ -49,6 +38,10 @@ html {
     color: var(--text-main);
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .section {
     padding: 4rem 1rem;
     max-width: 1200px;
@@ -66,9 +59,6 @@ strong {
     -webkit-text-fill-color: transparent;
 }
 
-.w-50 {
-    width: 50%;
-}
 
 section {
     display: flex;
@@ -93,6 +83,7 @@ section {
     text-align: left;
     max-width: 650px;
 }
+
 
 @media (max-width: 768px) {
     :root {

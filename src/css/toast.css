@@ -1,9 +1,8 @@
+/* Estilos para el mensaje flotante (toast) */
 .toast-glass {
-    /* position setup */
     position: fixed;
     left: 2rem;
     bottom: 1rem;
-    /* design */
     background: rgba(110, 0, 255, 0.23);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);

@@ -1,3 +1,4 @@
+<!-- Estructura principal del portafolio -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,11 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manuel Vasquez | Desarrollador Full-Stack & UI/UX</title>
+    <!-- Fuentes y Tipografía (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- Iconos de Material Design -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Hojas de estilo modulares -->
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/big-card.css">
     <link rel="stylesheet" href="src/css/buttons.css">
@@ -30,14 +34,12 @@
     <meta name="keywords"
         content="Manuel Vasquez, Desarrollador Full-Stack, UI/UX, JavaScript, Java Spring Boot, Arquitecturas Modernas">
 
-    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Manuel Vasquez | Desarrollador Web Full-Stack">
     <meta property="og:description"
         content="Portafolio de Manuel Vasquez, Desarrollador Full-Stack especializado en JS, Java Spring Boot y arquitecturas modernas.">
     <meta property="og:image" content="public/img/ManuelVasquezPhoto.webp">
     <meta property="og:url" content="https://manulzweb.github.io/">
     <meta property="og:type" content="website">
-    <!-- OPEN GRAPH TWITTER -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Manuel Vasquez | Desarrollador Web Full-Stack">
     <meta name="twitter:description"
@@ -48,13 +50,12 @@
 
 <body>
 
+    <!-- Barra de navegación superior -->
     <header class="sticky animated-border-bottom-5">
         <nav class="navbar" aria-label="Navegación principal">
-            <!-- Logo or tittle of the site -->
             <span class="navbar__title">ManulzWeb</span>
-            <!-- Hamburger menu button for small screens -->
             <input type="checkbox" id="nav-toggle" class="navbar__toggle-check">
-            <label for="nav-toggle" class="navbar__toggle-btn">
+            <label for="nav-toggle" class="navbar__toggle-btn pointer">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -62,7 +63,7 @@
             <ul class="navbar__items">
 
                 <li>
-                    <a class="navbar__link button-animation" href="#home" aria-label="home">
+                    <a class="navbar__link button-animation pointer" href="#home" aria-label="home">
                         <span class="material-icons">home</span>
                         <div class="navbar__link-text">
                             Inicio
@@ -70,7 +71,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="#projects" aria-label="Proyectos">
+                    <a class="navbar__link button-animation pointer" href="#projects" aria-label="Proyectos">
                         <span class="material-icons">folder</span>
                         <div class="navbar__link-text">
                             Proyectos
@@ -78,7 +79,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="#services" aria-label="Servicios">
+                    <a class="navbar__link button-animation pointer" href="#services" aria-label="Servicios">
                         <span class="material-icons">logo_dev</span>
                         <div class="navbar__link-text">
                             Servicios
@@ -86,7 +87,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link button-animation" href="mascotas.html" aria-label="Mascotas">
+                    <a class="navbar__link button-animation pointer" href="mascotas.html" aria-label="Mascotas">
                         <span class="material-icons">pets</span>
                         <div class="navbar__link-text">
                             Mascotas
@@ -94,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="navbar__link btn btn--contact" href="#" id="contact-btn" aria-label="Contacto">
+                    <a class="navbar__link btn btn--contact pointer" href="#" id="contact-btn" aria-label="Contacto">
                         <span class="material-icons">connect_without_contact</span>
                         <div class="navbar__link-text">
                             Contacto
@@ -107,10 +108,10 @@
     </header>
     <!-- Contenido principal -->
     <main class="bg">
-        <!-- Sección de inicio -->
+        <!-- Sección Hero: Presentación personal -->
         <section id="home" class="section hero-section-bg">
             <article class="hero">
-                <figure class="hero__img-container animated-border-5">
+                <figure class="hero__img-container animated-border-5 pointer">
                     <img class="hero__img" src="public/img/ManuelVasquezPhoto.webp"
                         alt="Fotografía profesional de Manuel Vasquez" fetchpriority="high">
                 </figure>
@@ -126,13 +127,13 @@
                         escalable.
                     </p>
                     <div class="big-card__actions">
-                        <a href="#projects" class="btn btn--primary">Ver proyectos</a>
+                        <a href="#projects" class="btn btn--primary pointer">Ver proyectos</a>
                     </div>
                 </div>
             </article>
         </section>
 
-        <!-- Nueva Sección: Tecnologías -->
+        <!-- Sección de Tecnologías -->
         <section id="technologies" class="section technologies">
             <div class="technologies__intro">
                 <h2 class="section-title">Mi Stack Tecnológico</h2>
@@ -141,27 +142,23 @@
             </div>
 
             <div class="technologies__grid">
-                <tech-card
-                    data-title="Frontend"
-                    data-icon="desktop_windows"
+                <!-- Tarjetas de tecnología renderizadas como Web Components -->
+                <tech-card data-title="Frontend" data-icon="desktop_windows"
                     data-items="HTML5 & CSS, JavaScript (ES6+), React, Angular">
                 </tech-card>
 
-                <tech-card
-                    data-title="Backend"
-                    data-icon="dns"
+                <tech-card data-title="Backend" data-icon="dns"
                     data-items="Java Spring Boot, Python, Node.js & Express, .NET Aprendiendo">
                 </tech-card>
 
-                <tech-card
-                    data-title="Infra & Tools"
-                    data-icon="cloud"
+                <tech-card data-title="Infra & Tools" data-icon="cloud"
                     data-items="AWS, Git & GitHub, Bases de Datos (SQL / NoSQL)">
                 </tech-card>
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <!-- Sección de Proyectos -->
+        <section id="projects" class="section projects">
             <div class="projects">
                 <article class="projects__intro">
                     <h2 class="section-title">Proyectos Destacados</h2>
@@ -171,61 +168,62 @@
                     </p>
                 </article>
                 <div class="projects__grid">
-                    <!-- Proyecto 1 -->
-                    <article class="proyecto-card">
-                        <img class="proyecto-card__img" src="public/img/placeholder-portafolio.svg" alt="Vista previa del proyecto Portafolio Personal">
-                        <div class="proyecto-card__content">
+                    <article class="project-card pointer">
+                        <img class="project-card__img" src="public/img/placeholder-portafolio.svg"
+                            alt="Vista previa del proyecto Portafolio Personal">
+                        <div class="project-card__content">
                             <header>
-                                <h3 class="proyecto-card__title">Proyecto 1: Portafolio Personal</h3>
+                                <h3 class="project-card__title">Proyecto 1: Portafolio Personal</h3>
                             </header>
-                            <p class="proyecto-card__description">
+                            <p class="project-card__description">
                                 Un portafolio personal desarrollado con HTML, CSS y JavaScript nativo,
                                 diseñado para mostrar mis habilidades y proyectos de manera profesional.
                             </p>
                         </div>
-                        <div class="proyecto-card__actions">
-                            <a href="#" class="btn btn--primary">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary">Sitio Web</a>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
                         </div>
                     </article>
-                    <!-- Proyecto 2 -->
-                    <article class="proyecto-card">
-                        <img class="proyecto-card__img" src="public/img/placeholder-tareas.svg" alt="Vista previa del proyecto Aplicación de Tareas">
-                        <div class="proyecto-card__content">
+                    <article class="project-card pointer">
+                        <img class="project-card__img" src="public/img/placeholder-tareas.svg"
+                            alt="Vista previa del proyecto Aplicación de Tareas">
+                        <div class="project-card__content">
                             <header>
-                                <h3 class="proyecto-card__title">Proyecto 2: Aplicación de Tareas</h3>
+                                <h3 class="project-card__title">Proyecto 2: Aplicación de Tareas</h3>
                             </header>
-                            <p class="proyecto-card__description">
+                            <p class="project-card__description">
                                 Una aplicación de gestión de tareas desarrollada con React,
                                 que permite a los usuarios organizar sus actividades diarias de manera eficiente.
                             </p>
                         </div>
-                        <div class="proyecto-card__actions">
-                            <a href="#" class="btn btn--primary">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary">Sitio Web</a>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
                         </div>
                     </article>
-                    <!-- Proyecto 3 -->
-                    <article class="proyecto-card">
-                        <img class="proyecto-card__img" src="public/img/placeholder-api.svg" alt="Vista previa del proyecto API REST Spring Boot">
-                        <div class="proyecto-card__content">
+                    <article class="project-card pointer">
+                        <img class="project-card__img" src="public/img/placeholder-api.svg"
+                            alt="Vista previa del proyecto API REST Spring Boot">
+                        <div class="project-card__content">
                             <header>
-                                <h3 class="proyecto-card__title">Proyecto 3: API REST con Spring Boot</h3>
+                                <h3 class="project-card__title">Proyecto 3: API REST con Spring Boot</h3>
                             </header>
-                            <p class="proyecto-card__description">
+                            <p class="project-card__description">
                                 Una API RESTful desarrollada con Java Spring Boot, diseñada para gestionar datos de
                                 usuarios
                                 y proporcionar servicios de backend para aplicaciones web y móviles.
                             </p>
                         </div>
-                        <div class="proyecto-card__actions">
-                            <a href="#" class="btn btn--primary">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary">Sitio Web</a>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
+        <!-- Sección de Servicios -->
         <section id="services" class="section services">
             <div class="services__intro">
                 <h2 class="section-title">Servicios Profesionales</h2>
@@ -233,46 +231,46 @@
             </div>
 
             <div class="services__grid">
-                <article class="servicio-card">
-                    <span class="material-icons servicio-card__icon">code</span>
-                    <h2 class="servicio-card__subtitle">Desarrollo Full-Stack</h2>
+                <article class="service-card pointer">
+                    <span class="material-icons service-card__icon">code</span>
+                    <h2 class="service-card__subtitle">Desarrollo Full-Stack</h2>
                     <p>Creación de aplicaciones completas y escalables desde la recolección de datos hasta la UI.</p>
                 </article>
 
-                <article class="servicio-card">
-                    <span class="material-icons servicio-card__icon">design_services</span>
-                    <h2 class="servicio-card__subtitle">Diseño UI/UX</h2>
+                <article class="service-card pointer">
+                    <span class="material-icons service-card__icon">design_services</span>
+                    <h2 class="service-card__subtitle">Diseño UI/UX</h2>
                     <p>Interfaces y prototipos funcionales altamente atractivos centrados en la experiencia final del
                         usuario.</p>
                 </article>
 
-                <article class="servicio-card">
-                    <span class="material-icons servicio-card__icon">support_agent</span>
-                    <h2 class="servicio-card__subtitle">Consultoría IT</h2>
+                <article class="service-card pointer">
+                    <span class="material-icons service-card__icon">support_agent</span>
+                    <h2 class="service-card__subtitle">Consultoría IT</h2>
                     <p>Asesoramiento en arquitectura de sistemas empresariales, nubes genéricas y en mejores prácticas
                         modernas.</p>
                 </article>
 
-                <article class="servicio-card">
-                    <span class="material-icons servicio-card__icon">speed</span>
-                    <h2 class="servicio-card__subtitle">Optimización</h2>
+                <article class="service-card pointer">
+                    <span class="material-icons service-card__icon">speed</span>
+                    <h2 class="service-card__subtitle">Optimización</h2>
                     <p>Mejora de velocidad en sitios heredados y auditorías de rendimiento integral para web vitales.
                     </p>
                 </article>
             </div>
 
-            <div class="services__action" style="text-align: center; margin-top: 3.5rem; width: 100%;">
-                <a href="#" id="contact-btn-services" class="btn btn--primary button-animation"
+            <div style="text-align: center; margin-top: 3.5rem; width: 100%;">
+                <a href="#" id="contact-btn-services" class="btn btn--primary button-animation pointer"
                     style="font-size: 1.1rem; padding: 1rem 2.5rem;">Solicitar Presupuesto Especializado</a>
             </div>
         </section>
     </main>
 
-    <!-- Modal de Contacto -->
+    <!-- Modal de contacto -->
     <div id="contact-modal" class="modal">
         <div class="modal__overlay"></div>
         <div class="modal__content">
-            <button class="modal__close" id="modal-close">&times;</button>
+            <button class="modal__close material-icons pointer" id="modal-close">close</button>
             <h2 class="modal__title">Contactame</h2>
             <form class="modal__form" id="contact-form">
                 <div class="form__group">
@@ -285,21 +283,23 @@
                 </div>
                 <div class="form__group">
                     <label for="message" class="form__label">Mensaje</label>
-                    <textarea id="message" name="message" class="form__input form__textarea" rows="5" required></textarea>
+                    <textarea id="message" name="message" class="form__input form__textarea" rows="5"
+                        required></textarea>
                 </div>
-                <button type="submit" class="form__submit btn btn--primary">Enviar</button>
+                <button type="submit" class="form__submit btn btn--primary pointer">Enviar</button>
             </form>
         </div>
     </div>
 
+    <!-- Pie de página -->
     <footer id="contact" class="footer">
         <div class="footer__container">
-            <div class="footer__content">
+            <div>
                 <h3 class="footer__title">Mi Portafolio</h3>
-                <p class="footer__text">Creando experiencias digitales únicas con código y diseño.</p>
+                <p>Creando experiencias digitales únicas con código y diseño.</p>
             </div>
 
-            <div class="footer__content">
+            <div>
                 <h4 class="footer__subtitle">Contacto</h4>
                 <ul class="footer__contact-list">
                     <li>
@@ -312,16 +312,17 @@
                     </li>
                 </ul>
             </div>
-        <div class="footer__bottom">
-            <p>&copy; 2026 Diseñado por Manuel Vasquez</p>
-        </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Diseñado por Manuel Vasquez</p>
+            </div>
     </footer>
+    <!-- Botón flotante de WhatsApp -->
     <div class="whatsapp-container">
-        <a class="whatsapp-button" href="https://wa.me/573016778673" target="_blank" class="whatsapp-link">
-            <img src="public/img/whatsapp.webp" alt="Icono de WhatsApp" class="whatsapp-icon">
+        <a class="whatsapp-button pointer" href="https://wa.me/573016778673" target="_blank">
+            <img src="public/img/whatsapp.webp" alt="Icono de WhatsApp">
         </a>
     </div>
-    <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="src/js/scripts.js"></script>
 </body>
 
 </html>

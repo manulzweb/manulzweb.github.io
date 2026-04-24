@@ -1,13 +1,18 @@
+/* Estilos para la cuadrícula de tecnologías */
+
+/* Contenedor principal de la sección de tecnologías */
 .technologies {
     flex-direction: column;
     width: 100%;
 }
 
+/* Introducción de la sección con texto centrado */
 .technologies__intro {
     text-align: center;
     margin-bottom: 3rem;
 }
 
+/* Cuadrícula de 3 columnas para las tarjetas de tecnología */
 .technologies__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15,6 +20,7 @@
     width: 100%;
 }
 
+/* Tarjeta de tecnología individual */
 .tech-card {
     background: rgba(255, 253, 254, 0.035);
     border-radius: 20px;
@@ -27,18 +33,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    min-height: 100%;
 
+    /* Animación de entrada al hacer scroll */
     animation: appearance linear forwards;
     animation-timeline: view();
     animation-range: entry 0% cover 25%;
 }
 
+/* Efecto hover en la tarjeta */
 .tech-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 253, 254, 0.08);
     outline: 2px solid var(--accent-500);
 }
 
+/* Icono de la tecnología con gradiente y sombra */
 .tech-card__icon {
     font-size: 3.5rem !important;
     background: linear-gradient(135deg, var(--accent-300), var(--accent-600));
@@ -49,11 +59,13 @@
     filter: drop-shadow(0 0 10px rgba(219, 141, 250, 0.5));
 }
 
+/* Contenedor del contenido de la tarjeta */
 .tech-card__content {
     display: flex;
     flex-direction: column;
 }
 
+/* Título de la tarjeta */
 .tech-card__title {
     color: var(--accent-400);
     font-size: 1.5rem;
@@ -61,6 +73,7 @@
     font-weight: 800;
 }
 
+/* Lista de items dentro de la tarjeta */
 .tech-card__list {
     list-style: none;
     padding: 0;
@@ -68,6 +81,7 @@
     color: var(--text-main);
 }
 
+/* Estilo de cada item de la lista */
 .tech-card__list li {
     font-size: 1.1rem;
     padding: 0.8rem 0;
@@ -75,27 +89,20 @@
     font-weight: 600;
 }
 
+/* Quitamos el borde al último item */
 .tech-card__list li:last-child {
     border-bottom: none;
 }
 
-.tech-card__learning {
-    color: var(--accent-300);
-    font-size: 0.8em;
-    font-weight: normal;
-    background: rgba(219, 141, 250, 0.15);
-    padding: 2px 8px;
-    border-radius: 12px;
-    margin-left: 8px;
-    vertical-align: middle;
-}
 
+/* Adaptación para pantallas medianas (2 columnas) */
 @media (max-width: 1024px) {
     .technologies__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Adaptación para pantallas pequeñas (1 columna y layout horizontal interno) */
 @media (max-width: 650px) {
     .technologies__grid {
         grid-template-columns: 1fr;
@@ -107,7 +114,6 @@
         text-align: left;
         padding: 1.2rem;
     }
-
 
     .tech-card__icon {
         font-size: 2.5rem !important;

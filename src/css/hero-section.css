@@ -1,9 +1,11 @@
+/* Estilos para la sección de presentación (Hero) */
 
+/* Fondo con gradiente sutil para la sección hero */
 .hero-section-bg {
-    /* Fondo translúcido para revelar las orbes de fondo */
-    background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(31, 28, 107, 0.25) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(31, 28, 107, 0.25) 100%);
 }
 
+/* Layout principal del Hero: 2 columnas (foto y texto) */
 .hero {
     display: grid;
     width: 90%;
@@ -14,27 +16,31 @@
     height: 100% !important;
 }
 
+/* Contenedor de la imagen de perfil con transición suave */
 .hero__img-container {
     max-width: 100%;
     max-height: 500px;
     display: flex;
     justify-content: center;
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease 1s;
     transition: translate 0.5s ease;
 }
 
+/* Efecto de zoom y elevación en la foto de perfil */
 .hero__img-container:hover {
-    cursor: pointer;
     transform: scale(1.05);
     translate: 0px -10px;
 }
 
+/* Estilo de la imagen de perfil */
 .hero__img {
     object-fit: cover;
     border-radius: 19px;
     width: 100%;
+    height: auto;
 }
 
+/* Ajustes responsivos para tablets */
 @media (max-width: 960px) {
     .hero {
         grid-template-columns: 320px 1fr;
@@ -42,10 +48,12 @@
     }
 }
 
+/* Ajustes responsivos para móviles (cambio a 1 columna) */
 @media (max-width: 768px) {
     .hero-section-bg {
-        background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(31, 28, 107, 0.25) 100%);
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(31, 28, 107, 0.25) 100%);
     }
+
     .hero {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -53,6 +61,7 @@
     }
 }
 
+/* Ajustes finales para pantallas muy pequeñas */
 @media (max-width: 425px) {
     .hero {
         grid-template-columns: 1fr;

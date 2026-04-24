@@ -1,21 +1,26 @@
+/* Estilos para la sección de servicios */
+
+/* Contenedor base de la sección */
 .services {
     flex-direction: column;
     width: 100%;
 }
 
+/* Texto introductorio centrado */
 .services__intro {
     text-align: center;
     margin-bottom: 3rem;
 }
 
+/* Cuadrícula flexible para los servicios */
 .services__grid {
     display: grid;
-    /* GRID MÁGICO: Las columnas se calculan solas */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
 
-.servicio-card {
+/* Tarjeta de servicio individual */
+.service-card {
     background: rgba(255, 253, 254, 0.035);
     border-radius: 20px;
     padding: 2rem;
@@ -23,19 +28,21 @@
     text-align: center;
     transition: transform 0.3s ease, outline 1s ease;
     
-    /* Animación de entrada igual a los proyectos */
+    /* Animación de aparición gradual al bajar con el scroll */
     animation: appearance linear forwards;
     animation-timeline: view();
     animation-range: entry 0% cover 25%;
 }
 
-.servicio-card:hover {
+/* Efecto hover: eleva la tarjeta y cambia el borde */
+.service-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 253, 254, 0.06);
     outline: 2px solid var(--accent-700);
 }
 
-.servicio-card__icon {
+/* Icono del servicio con gradiente y sombra de brillo */
+.service-card__icon {
     font-size: 3.5rem !important;
     background: linear-gradient(135deg, var(--accent-300), var(--accent-600));
     -webkit-background-clip: text;
@@ -46,7 +53,8 @@
     filter: drop-shadow(0 0 10px rgba(235, 184, 255, 0.4));
 }
 
-.servicio-card__subtitle {
+/* Título de la tarjeta de servicio */
+.service-card__subtitle {
     color: var(--accent-400);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
