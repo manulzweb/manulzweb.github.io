@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="src/css/navbar.css">
     <link rel="stylesheet" href="src/css/toast.css">
     <link rel="stylesheet" href="src/css/modal.css">
+    <link rel="stylesheet" href="src/css/lang-toggle.css">
     <link rel="stylesheet" href="src/css/whatsapp-button.css">
 
     <meta name="description"
@@ -65,41 +66,31 @@
                 <li>
                     <a class="navbar__link button-animation pointer" href="#home" aria-label="home">
                         <span class="material-icons">home</span>
-                        <div class="navbar__link-text">
-                            Inicio
-                        </div>
+                        <div class="navbar__link-text" data="home">Inicio</div>
                     </a>
                 </li>
                 <li>
                     <a class="navbar__link button-animation pointer" href="#projects" aria-label="Proyectos">
                         <span class="material-icons">folder</span>
-                        <div class="navbar__link-text">
-                            Proyectos
-                        </div>
+                        <div class="navbar__link-text" data="projects">Proyectos</div>
                     </a>
                 </li>
                 <li>
                     <a class="navbar__link button-animation pointer" href="#services" aria-label="Servicios">
                         <span class="material-icons">logo_dev</span>
-                        <div class="navbar__link-text">
-                            Servicios
-                        </div>
+                        <div class="navbar__link-text" data="services">Servicios</div>
                     </a>
                 </li>
                 <li>
                     <a class="navbar__link button-animation pointer" href="mascotas.html" aria-label="Mascotas">
                         <span class="material-icons">pets</span>
-                        <div class="navbar__link-text">
-                            Mascotas
-                        </div>
+                        <div class="navbar__link-text" data="pets">Mascotas</div>
                     </a>
                 </li>
                 <li>
                     <a class="navbar__link btn btn--contact pointer" href="#" id="contact-btn" aria-label="Contacto">
                         <span class="material-icons">connect_without_contact</span>
-                        <div class="navbar__link-text">
-                            Contacto
-                        </div>
+                        <div class="navbar__link-text" data="contact">Contacto</div>
                     </a>
                 </li>
 
@@ -117,17 +108,17 @@
                 </figure>
                 <div class="big-card">
                     <header>
-                        <p class="big-card__subtitle">Hola, soy</p>
-                        <h1 class="big-card__name">Manuel Vasquez Mendoza</h1>
-                        <p class="big-card__subtitle">Desarrollador Full-Stack</p>
+                        <p class="big-card__subtitle" data="greeting">Hola, soy</p>
+                        <h1 class="big-card__name" data="fullName">Manuel Vasquez Mendoza</h1>
+                        <p class="big-card__subtitle" data="role">Desarrollador Full-Stack</p>
                     </header>
-                    <p class="big-card__description">
+                    <p class="big-card__description" data="description">
                         Construyo soluciones digitales de alto rendimiento. Me especializo en crear arquitecturas
                         robustas y experiencias de usuario excepcionales combinando diseño moderno con código fluido y
                         escalable.
                     </p>
                     <div class="big-card__actions">
-                        <a href="#projects" class="btn btn--primary pointer">Ver proyectos</a>
+                        <a href="#projects" class="btn btn--primary pointer" data="viewProjects">Ver proyectos</a>
                     </div>
                 </div>
             </article>
@@ -136,8 +127,8 @@
         <!-- Sección de Tecnologías -->
         <section id="technologies" class="section technologies">
             <div class="technologies__intro">
-                <h2 class="section-title">Mi Stack Tecnológico</h2>
-                <p class="section-description">Herramientas y plataformas que utilizo para construir soluciones
+                <h2 class="section-title" data="techStack">Mi Stack Tecnológico</h2>
+                <p class="section-description" data="techDescription">Herramientas y plataformas que utilizo para construir soluciones
                     robustas, rápidas y escalables.</p>
             </div>
 
@@ -161,8 +152,8 @@
         <section id="projects" class="section projects">
             <div class="projects">
                 <article class="projects__intro">
-                    <h2 class="section-title">Proyectos Destacados</h2>
-                    <p class="section-description">
+                    <h2 class="section-title" data="featuredProjects">Proyectos Destacados</h2>
+                    <p class="section-description" data="projectsDescription">
                         A continuación, se presentan algunos de mis proyectos más recientes,
                         que reflejan mi experiencia y habilidades en el desarrollo web full-stack.
                     </p>
@@ -173,16 +164,16 @@
                             alt="Vista previa del proyecto Portafolio Personal">
                         <div class="project-card__content">
                             <header>
-                                <h3 class="project-card__title">Proyecto 1: Portafolio Personal</h3>
+                                <h3 class="project-card__title" data="project1Title">Proyecto 1: Portafolio Personal</h3>
                             </header>
-                            <p class="project-card__description">
+                            <p class="project-card__description" data="project1Desc">
                                 Un portafolio personal desarrollado con HTML, CSS y JavaScript nativo,
                                 diseñado para mostrar mis habilidades y proyectos de manera profesional.
                             </p>
                         </div>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
+                            <a href="#" class="btn btn--primary pointer" data="viewDemo">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer" data="website">Sitio Web</a>
                         </div>
                     </article>
                     <article class="project-card pointer">
@@ -190,16 +181,16 @@
                             alt="Vista previa del proyecto Aplicación de Tareas">
                         <div class="project-card__content">
                             <header>
-                                <h3 class="project-card__title">Proyecto 2: Aplicación de Tareas</h3>
+                                <h3 class="project-card__title" data="project2Title">Proyecto 2: Aplicación de Tareas</h3>
                             </header>
-                            <p class="project-card__description">
+                            <p class="project-card__description" data="project2Desc">
                                 Una aplicación de gestión de tareas desarrollada con React,
                                 que permite a los usuarios organizar sus actividades diarias de manera eficiente.
                             </p>
                         </div>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
+                            <a href="#" class="btn btn--primary pointer" data="viewDemo">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer" data="website">Sitio Web</a>
                         </div>
                     </article>
                     <article class="project-card pointer">
@@ -207,17 +198,17 @@
                             alt="Vista previa del proyecto API REST Spring Boot">
                         <div class="project-card__content">
                             <header>
-                                <h3 class="project-card__title">Proyecto 3: API REST con Spring Boot</h3>
+                                <h3 class="project-card__title" data="project3Title">Proyecto 3: API REST con Spring Boot</h3>
                             </header>
-                            <p class="project-card__description">
+                            <p class="project-card__description" data="project3Desc">
                                 Una API RESTful desarrollada con Java Spring Boot, diseñada para gestionar datos de
                                 usuarios
                                 y proporcionar servicios de backend para aplicaciones web y móviles.
                             </p>
                         </div>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--primary pointer">Ver Demo</a>
-                            <a href="#" class="btn btn--secondary pointer">Sitio Web</a>
+                            <a href="#" class="btn btn--primary pointer" data="viewDemo">Ver Demo</a>
+                            <a href="#" class="btn btn--secondary pointer" data="website">Sitio Web</a>
                         </div>
                     </article>
                 </div>
@@ -226,42 +217,42 @@
         <!-- Sección de Servicios -->
         <section id="services" class="section services">
             <div class="services__intro">
-                <h2 class="section-title">Servicios Profesionales</h2>
-                <p class="section-description">Ofrezco soluciones integrales de desarrollo y diseño digital.</p>
+                <h2 class="section-title" data="professionalServices">Servicios Profesionales</h2>
+                <p class="section-description" data="servicesDescription">Ofrezco soluciones integrales de desarrollo y diseño digital.</p>
             </div>
 
             <div class="services__grid">
                 <article class="service-card pointer">
                     <span class="material-icons service-card__icon">code</span>
-                    <h2 class="service-card__subtitle">Desarrollo Full-Stack</h2>
-                    <p>Creación de aplicaciones completas y escalables desde la recolección de datos hasta la UI.</p>
+                    <h2 class="service-card__subtitle" data="fullstackDev">Desarrollo Full-Stack</h2>
+                    <p data="fullstackDesc">Creación de aplicaciones completas y escalables desde la recolección de datos hasta la UI.</p>
                 </article>
 
                 <article class="service-card pointer">
                     <span class="material-icons service-card__icon">design_services</span>
-                    <h2 class="service-card__subtitle">Diseño UI/UX</h2>
-                    <p>Interfaces y prototipos funcionales altamente atractivos centrados en la experiencia final del
+                    <h2 class="service-card__subtitle" data="uiuxDesign">Diseño UI/UX</h2>
+                    <p data="uiuxDesc">Interfaces y prototipos funcionales altamente atractivos centrados en la experiencia final del
                         usuario.</p>
                 </article>
 
                 <article class="service-card pointer">
                     <span class="material-icons service-card__icon">support_agent</span>
-                    <h2 class="service-card__subtitle">Consultoría IT</h2>
-                    <p>Asesoramiento en arquitectura de sistemas empresariales, nubes genéricas y en mejores prácticas
+                    <h2 class="service-card__subtitle" data="itConsulting">Consultoría IT</h2>
+                    <p data="itDesc">Asesoramiento en arquitectura de sistemas empresariales, nubes genéricas y en mejores prácticas
                         modernas.</p>
                 </article>
 
                 <article class="service-card pointer">
                     <span class="material-icons service-card__icon">speed</span>
-                    <h2 class="service-card__subtitle">Optimización</h2>
-                    <p>Mejora de velocidad en sitios heredados y auditorías de rendimiento integral para web vitales.
+                    <h2 class="service-card__subtitle" data="optimization">Optimización</h2>
+                    <p data="optimizationDesc">Mejora de velocidad en sitios heredados y auditorías de rendimiento integral para web vitales.
                     </p>
                 </article>
             </div>
 
             <div style="text-align: center; margin-top: 3.5rem; width: 100%;">
                 <a href="#" id="contact-btn-services" class="btn btn--primary button-animation pointer"
-                    style="font-size: 1.1rem; padding: 1rem 2.5rem;">Solicitar Presupuesto Especializado</a>
+                    style="font-size: 1.1rem; padding: 1rem 2.5rem;" data="requestQuote">Solicitar Presupuesto Especializado</a>
             </div>
         </section>
     </main>
@@ -271,22 +262,22 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <button class="modal__close material-icons pointer" id="modal-close">close</button>
-            <h2 class="modal__title">Contactame</h2>
+            <h2 class="modal__title" data="contactMe">Contactame</h2>
             <form class="modal__form" id="contact-form">
                 <div class="form__group">
-                    <label for="name" class="form__label">Nombre</label>
+                    <label for="name" class="form__label" data="formName">Nombre</label>
                     <input type="text" id="name" name="name" class="form__input" required>
                 </div>
                 <div class="form__group">
-                    <label for="email" class="form__label">Email</label>
+                    <label for="email" class="form__label" data="email">Email</label>
                     <input type="email" id="email" name="email" class="form__input" required>
                 </div>
                 <div class="form__group">
-                    <label for="message" class="form__label">Mensaje</label>
+                    <label for="message" class="form__label" data="message">Mensaje</label>
                     <textarea id="message" name="message" class="form__input form__textarea" rows="5"
                         required></textarea>
                 </div>
-                <button type="submit" class="form__submit btn btn--primary pointer">Enviar</button>
+                <button type="submit" class="form__submit btn btn--primary pointer" data="send">Enviar</button>
             </form>
         </div>
     </div>
@@ -295,12 +286,12 @@
     <footer id="contact" class="footer">
         <div class="footer__container">
             <div>
-                <h3 class="footer__title">Mi Portafolio</h3>
-                <p>Creando experiencias digitales únicas con código y diseño.</p>
+                <h3 class="footer__title" data="portfolio">Mi Portafolio</h3>
+                <p data="portfolioDesc">Creando experiencias digitales únicas con código y diseño.</p>
             </div>
 
             <div>
-                <h4 class="footer__subtitle">Contacto</h4>
+                <h4 class="footer__subtitle" data="contactInfo">Contacto</h4>
                 <ul class="footer__contact-list">
                     <li>
                         <span class="material-icons">email</span>
@@ -308,12 +299,12 @@
                     </li>
                     <li>
                         <span class="material-icons">location_on</span>
-                        Barranquilla, Colombia
+                        <span data="location">Barranquilla, Colombia</span>
                     </li>
                 </ul>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2026 Diseñado por Manuel Vasquez</p>
+                <p data="copyright">&copy; 2026 Diseñado por Manuel Vasquez</p>
             </div>
     </footer>
     <!-- Botón flotante de WhatsApp -->
