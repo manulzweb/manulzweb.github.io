@@ -44,12 +44,19 @@ class TranslationService {
     }
 
     /**
-     * Cambia el idioma actual entre las opciones disponibles (Español / Inglés).
+     * Cambia al siguiente idioma disponible, recorriendo de forma cíclica todas las
+     * opciones definidas en el JSON de traducciones (soporta más de dos idiomas).
      * Guarda la selección en localStorage para futuras visitas.
      */
     toggleLanguage() {
-        //Ternario que evalua si hay un currentlang y si es del mismo valor y tipo de "es". en dado caso lo pone a "en", sino lo deja en "es". Esto solo sirve para cuando son dos idiomas.
-        this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
+        // Obtenemos la lista de idiomas disponibles a partir de las claves del JSON de traducciones.
+        const availableLangs = Object.keys(this.translations);
+
+        // Buscamos la posición del idioma actual y avanzamos al siguiente, volviendo al inicio al llegar al final.
+        const currentIndex = availableLangs.indexOf(this.currentLang);
+        const nextIndex = (currentIndex + 1) % availableLangs.length;
+        this.currentLang = availableLangs[nextIndex];
+
         //guardamos en el localstorage el string curretLang con el valor "language"
         localStorage.setItem('language', this.currentLang);
 
@@ -89,17 +96,15 @@ class TranslationService {
             }
         });
 
-        // 2. Actualizar el título de la pestaña del navegador
-        document.title = lang === 'es'
-            ? 'Manuel Vasquez | Desarrollador Full-Stack & UI/UX'
-            : 'Manuel Vasquez | Full-Stack Developer & UI/UX';
+        // 2. Actualizar el título de la pestaña del navegador (tomado del diccionario del idioma)
+        if (translations.pageTitle) {
+            document.title = translations.pageTitle;
+        }
 
-        // 3. Actualizar la meta-descripción para SEO
+        // 3. Actualizar la meta-descripción para SEO (tomada del diccionario del idioma)
         const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.content = lang === 'es'
-                ? 'Portafolio de Manuel Vasquez, Desarrollador Full-Stack especializado en JS, Java Spring Boot y arquitecturas modernas.'
-                : 'Manuel Vasquez\'s portfolio, Full-Stack Developer specialized in JS, Java Spring Boot and modern architectures.';
+        if (metaDesc && translations.metaDescription) {
+            metaDesc.content = translations.metaDescription;
         }
 
         // 4. Actualizar el atributo lang global del documento HTML

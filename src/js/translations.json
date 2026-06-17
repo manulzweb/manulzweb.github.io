@@ -1,5 +1,7 @@
 {
     "es": {
+        "pageTitle": "Manuel Vasquez | Desarrollador Full-Stack & UI/UX",
+        "metaDescription": "Portafolio de Manuel Vasquez, Desarrollador Full-Stack especializado en JS, Java Spring Boot y arquitecturas modernas.",
         "home": "Inicio",
         "projects": "Proyectos",
         "services": "Servicios",
@@ -48,6 +50,8 @@
         "copyright": "© 2026 Diseñado por Manuel Vasquez"
     },
     "en": {
+        "pageTitle": "Manuel Vasquez | Full-Stack Developer & UI/UX",
+        "metaDescription": "Manuel Vasquez's portfolio, Full-Stack Developer specialized in JS, Java Spring Boot and modern architectures.",
         "home": "Home",
         "projects": "Projects",
         "services": "Services",
