@@ -36,7 +36,9 @@ Para demostrar diferentes enfoques de desarrollo, el proyecto utiliza dos métod
 - Soporte para múltiples idiomas (Español/Inglés) sin recarga de página.
 - Gestión de textos mediante archivos JSON externos.
 - Persistencia de preferencia de idioma en el navegador.
+### 6. Sistema de chatbot para mejorar comunicación con el usuario interesado
 
+- Chatbot
 ---
 
 ## 🌍 Sistema de Traducciones
